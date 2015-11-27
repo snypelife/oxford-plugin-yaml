@@ -1,0 +1,31 @@
+{
+  "name": "oxford-plugin-yaml",
+  "version": "1.0.0",
+  "description": "Oxford plugin for easily importing yaml files",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "cov": "istanbul cover _mocha  -- ./test/* --ui bdd -R spec -t 5000; opener ./coverage/lcov-report/index.html",
+    "test": "istanbul cover _mocha -- ./test/* --ui bdd -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+  },
+  "keywords": [
+    "oxford",
+    "l10n"
+  ],
+  "author": "Brett Rogerson <brettmrogerson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.4.6"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.10.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "opener": "^1.4.1",
+    "oxford": "^1.6.0",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
+}

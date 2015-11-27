@@ -1,4 +1,7 @@
 #Oxford YAML Plugin
+[![Build Status](https://travis-ci.org/snypelife/oxford-plugin-yaml.svg)](https://travis-ci.org/snypelife/oxford-plugin-yaml)
+[![Coverage Status](https://coveralls.io/repos/snypelife/oxford-plugin-yaml/badge.svg?branch=master&service=github)](https://coveralls.io/github/snypelife/oxford-plugin-yaml?branch=master)
+
 This simple Oxford plugin exposes a static method off of the Oxford library function that can be used to import yaml files directly into an Oxford string library.
 
 All you have to do is register the plugin with the Oxford instance by calling the `.registerPlugin` method, and providing the plugin's name (i.e. "yaml").

@@ -18,10 +18,11 @@ messageTo: Hello %s!
 ```js
 // example.js
 
+var path = require('path');
 var oxford = require('oxford');
 oxford.registerPlugin('yaml');
 
-var ox = oxford.importYAML('./lib/text.yml');
+var ox = oxford.importYAML(path.join(__dirname, './lib/text.yml'));
 
 ox.get('message') // Hello World!
 ox.get('messageTo', 'Homer') // Hello Homer!

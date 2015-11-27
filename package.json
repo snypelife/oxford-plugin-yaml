@@ -8,6 +8,10 @@
     "cov": "istanbul cover _mocha  -- ./test/* --ui bdd -R spec -t 5000; opener ./coverage/lcov-report/index.html",
     "test": "istanbul cover _mocha -- ./test/* --ui bdd -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:snypelife/oxford-plugin-yaml.git"
+  },
   "keywords": [
     "oxford",
     "l10n"
@@ -17,6 +21,10 @@
   "dependencies": {
     "js-yaml": "^3.4.6"
   },
+  "bugs": {
+    "url": "https://github.com/snypelife/oxford-plugin-yaml/issues"
+  },
+  "homepage": "https://github.com/snypelife/oxford-plugin-yaml",
   "devDependencies": {
     "chai": "^3.4.1",
     "coveralls": "^2.11.4",

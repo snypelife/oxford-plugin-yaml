@@ -32,8 +32,12 @@ describe('Unit Test', function () {
   });
 
   it('should throw an error for invalid param type', function () {
-    var func = oxfordPluginYAML.method.bind(spy, {});
+    var func = oxfordPluginYAML.method.bind(spy, 1);
     expect(func).to.throw('failed to import yaml file');
     expect(spy).to.not.have.been.called;
-  })
+
+    func = oxfordPluginYAML.method.bind(spy, {});
+    expect(func).to.throw('failed to import yaml file');
+    expect(spy).to.not.have.been.called;
+  });
 });

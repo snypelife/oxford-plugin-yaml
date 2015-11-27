@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var chai = require('chai');
 var expect = chai.expect;
 var sinon = require('sinon');
@@ -14,15 +15,15 @@ describe('Integration Test', function () {
   });
 
   it('should import a yaml file and build an oxford string library', function () {
-    var ox = oxford.importYAML('./fixtures/test.yml');
+    var ox = oxford.importYAML(path.join(__dirname, './fixtures/test.yml'));
     expect(ox).to.be.an('object');
     expect(ox.get('message')).to.equal('hello world!');
   });
 
   it('should import yaml files and build an oxford string library', function () {
     var ox = oxford.importYAML([
-      './fixtures/test-a.yml',
-      './fixtures/test-b.yml'
+      path.join(__dirname, './fixtures/test-a.yml'),
+      path.join(__dirname, './fixtures/test-b.yml')
     ]);
 
     expect(ox).to.be.an('object');

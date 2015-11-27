@@ -6,16 +6,6 @@ var read = fs.readFileSync;
 var yaml = require('js-yaml');
 var load = yaml.safeLoad;
 
-var fs = require('fs');
-var path = require('path');
-
-var absolute = [].concat(
-                 path.sep,
-                 path.dirname(module.parent.id).split(path.sep),
-                 path.sep
-               );
-var dir = path.join.apply(null, absolute);
-
 var InvalidFormatError = new Error('invalid format for parameter `url`.');
 
 module.exports = {
@@ -25,11 +15,11 @@ module.exports = {
     try {
       switch (typeof url) {
         case 'string':
-          return this(load(read(path.join(dir, url), 'utf8')));
+          return this(load(read(url)));
         case 'object':
           if (Array.isArray(url)) {
             var hash = url.map(function (u) {
-              return load(read(path.join(dir, u), 'utf8'));
+              return load(read(u));
             });
             return this(hash);
           }

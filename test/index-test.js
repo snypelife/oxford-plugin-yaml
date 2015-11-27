@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var chai = require('chai');
 var expect = chai.expect;
 var sinon = require('sinon');
@@ -15,14 +16,14 @@ describe('Unit Test', function () {
   });
 
   it('should accept a file path string', function () {
-    oxfordPluginYAML.method.call(spy, './fixtures/test.yml');
+    oxfordPluginYAML.method.call(spy, path.join(__dirname, './fixtures/test.yml'));
     expect(spy).to.have.been.calledWith({ message: 'hello world!' });
   });
 
   it('should accept an array of file path strings', function () {
     oxfordPluginYAML.method.call(spy, [
-      './fixtures/test-a.yml',
-      './fixtures/test-b.yml'
+      path.join(__dirname, './fixtures/test-a.yml'),
+      path.join(__dirname, './fixtures/test-b.yml')
     ]);
 
     expect(spy).to.have.been.calledWith([

@@ -1,6 +1,6 @@
 {
   "name": "oxford-plugin-yaml",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Oxford plugin for easily importing yaml files",
   "main": "index.js",
   "scripts": {
